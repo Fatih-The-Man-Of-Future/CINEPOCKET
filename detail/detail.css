@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "poppins", serif;
+    background-color: #0d0f14;
+    color: white;
+}
+/* navbar */
+.navbar {
+    height: 100%;
+    background-color: #1C1F26;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    height: 192px;
+}
+
+.navbar img {
+    width: 279px;
+    height: 186px;
+    margin-left: 22px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 380px;
+    height: 61px;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: white;
+    margin-right: 42px;
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 20px 40px;
+    background: transparent;
+    font-size: 20px;
+    outline: none;
+    padding-right: 5px;
+}
+
+.search-button {
+    background-color: white;
+    border: none;
+    padding: 10px 25px 10px 10px;
+    cursor: pointer;
+
+}
+
+.search-button img {
+    height: 27px;
+    width: 27px;
+}
+
+/* DETAIL */
+
+.detail-container {
+    width: 1344;
+    margin: 48px;
+    min-height: 720px;
+}
+
+.detail-card {
+    background-color: #56565625;
+    border-radius: 25px;
+    padding: 33px 39px;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
+    min-width: 1267px;
+    min-height: 653px;
+}
+
+.detail-poster {
+    min-width: 308px;
+    min-height: 463px;
+    position: relative;
+}
+
+.detail-poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.detail-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.detail-title {
+    font-size: 60px;
+    font-weight: 700;
+    color: #F8F8FF;
+}
+.detail-title hr{
+    margin-bottom: 19px;
+}
+
+.detail-content p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+.detail-content strong {
+    color: #F8F8FF;
+}
+
+.sinopsis-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.sinopsis-text {
+    font-size: 16px;
+    margin-bottom: 30px !important;
+    text-align: justify;
+}
+
+.buy-ticket-btn {
+    align-self: flex-start;
+    padding: 15px 35px;
+    background-color: #4A90E2; /* Warna yang cerah */
+    color: #ffff;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-ticket-btn:hover {
+    background-color: #3266a0;
+}
+.back-btn:hover {
+    background-color: #3266a0;
+}
+
+/* Tombol Kembali (Chevron Kiri) */
+.back-btn {
+    position: absolute;
+    top: -20px; 
+    left: -20px;
+    background-color: #4A90E2;
+    color: #ffff;
+    border: none;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.back-btn .material-symbols-outlined {
+    font-size: 30px;
+}
