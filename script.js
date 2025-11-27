@@ -23,7 +23,10 @@ function setHomeSectionVisibility(showPopular, showTrending, showSearch) {
 
 // DOM FOR SEARCH SECTION
 function createSearchCard(movie) {
-    const imageUrl = movie.poster_path ? `${POSTER_BASE_URL}${movie.poster_path}` : 'path/to/placeholder/image.png';
+    const imageUrl = movie.poster_path 
+        ? `${POSTER_BASE_URL}${movie.poster_path}` 
+        : '/photo/no-image.png';
+
     const title = movie.title || movie.name;
 
     return `
@@ -58,7 +61,7 @@ async function searchMovie() {
     searchTitle.textContent = `Hasil Pencarian untuk: "${query}"`;
     searchList.innerHTML = '<p>Mencari film...</p>';
 
-    const endpoint = `/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=1`;
+    const endpoint = `/search/movie?query=${encodeURIComponent(query)}&language=en-US&page=1`;
 
     try {
         const response = await fetch(`${TMDB_BASE_URL}${endpoint}`, options);
@@ -81,6 +84,7 @@ async function searchMovie() {
     }
 }
 
+// tombol enter
 document.addEventListener('DOMContentLoaded', () => {
     const searchButton = document.querySelector('.search-button');
     const searchInput = document.getElementById('search-input');
@@ -134,10 +138,10 @@ async function fetchPopularMovies() {
                 popularSwiper.destroy(true, true);
             }
             popularSwiper = new Swiper(".wrapper", {
-                loop: false, 
+                loop: true, 
                 spaceBetween: 0,
                 autoplay: {
-                    delay: 5000,
+                    delay: 10000,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                 },
@@ -148,12 +152,15 @@ async function fetchPopularMovies() {
         
     } catch (error) {
         console.error('Error fetching popular movies:', error);
-        popularList.innerHTML = '<div class="swiper-slide"><p>Gagal memuat film populer. Coba periksa koneksi atau API Key Anda.</p></div>';
+        popularList.innerHTML = '<div class="swiper-slide"><p>Periksa Koneksi anda</p></div>';
     }
 }
+
 // DOM FOR TRENDING SECTION
 function createTrendingCard(movie) {
-    const imageUrl = movie.poster_path ? `${POSTER_BASE_URL}${movie.poster_path}` : 'path/to/placeholder/image.png';
+    const imageUrl = movie.poster_path 
+        ? `${POSTER_BASE_URL}${movie.poster_path}` 
+        : '/photo/no-image.png';
     const title = movie.title || movie.name;
 
     return `
@@ -184,7 +191,6 @@ async function fetchTrendingMovies() {
             
             let htmlContent = '';
             trendingMovies.forEach(movie => {
-                // PANGGIL FUNGSI createTrendingCard
                 htmlContent += createTrendingCard(movie); 
             });
             
@@ -207,13 +213,12 @@ function addScrollBtn() {
 
     //scroll trending
     if (!trendingContainer || !trendingList) return;
-
+    //kiri
     const leftBtn = document.createElement('button');
     leftBtn.innerHTML = '<span class="material-symbols-outlined">chevron_left</span>';
-
     leftBtn.className = 'scroll-btn trending-scroll-btn scroll-left'; 
     leftBtn.onclick = () => trendingList.scrollBy({ left: -300, behavior: 'smooth' });
-
+    //kanan
     const rightBtn = document.createElement('button');
     rightBtn.innerHTML = '<span class="material-symbols-outlined">chevron_right</span>';
     rightBtn.className = 'scroll-btn trending-scroll-btn scroll-right'; 

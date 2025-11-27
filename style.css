@@ -119,7 +119,7 @@ body {
 }
 
 .search-list .search-card .card-content .card-title {
-    font-size: 24px;
+    font-size: 18px;
     font-family: 'poppins';
     width: 258px;
     height: 36px;
@@ -289,7 +289,7 @@ body {
 .scroll-btn {
     position: absolute;
     top: 58%;
-    background-color: rgba(26, 61, 100, 0.7);
+    background-color: rgba(26, 61, 100, 75);
     color: #CCCCCC;
     border: none;
     border-radius: 50%;
@@ -301,7 +301,7 @@ body {
 }
 
 .scroll-btn:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(26, 61, 100,);
 }
 
 .scroll-btn .material-symbols-outlined {
