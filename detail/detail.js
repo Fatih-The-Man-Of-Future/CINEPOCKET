@@ -30,37 +30,36 @@ function renderMovieDetail(movie, cast) {
         <div class="detail-content">
             <h2 class="detail-title">${movie.title}</h2>
             <hr>
-            <p><strong>Genre:</strong> ${genres}</p>
-            <p><strong>Durasi:</strong> ${movie.runtime} Menit</p>
+            <p><strong>Genre        :</strong> ${genres}</p>
+            <p><strong>Durasi       :</strong> ${movie.runtime} Menit</p>
             <p><strong>Tanggal Rilis:</strong> ${releaseDate}</p>
-            <p><strong>Pemeran:</strong> ${castNames}</p>
-            <h3 class="sinopsis-title">Sinopsis:</h3>
+            <p><strong>Pemeran      :</strong> ${castNames}</p>
+            <h3 class="sinopsis-title">Sinopsis     :</h3>
             <p class="sinopsis-text">${movie.overview || 'Sinopsis tidak tersedia.'}</p>
             <button class="buy-ticket-btn">Beli Tiket</button>
         </div>
     `;
-    document.title = movie.title + " | CinePocket";
 }
 
 
 async function fetchAndRenderDetails() {
-    const movieId = getMovieIdFromUrl();
-    if (!movieId) {
-        document.getElementById('movie-detail-container').innerHTML = '<p>Film ID tidak ditemukan.</p>';
-        return;
-    }
+    const movieId = getMovieIdFromUrl();
+    if (!movieId) {
+        document.getElementById('movie-detail-container').innerHTML = '<p>Film ID tidak ditemukan.</p>';
+        return;
+    }
 
-    try {
-        const detailResponse = await fetch(`${TMDB_BASE_URL}/movie/${movieId}?language=id-ID`, options);
-        const detailData = await detailResponse.json();
-        const creditResponse = await fetch(`${TMDB_BASE_URL}/movie/${movieId}/credits?language=id-ID`, options);
-        const creditData = await creditResponse.json();
-        
-        renderMovieDetail(detailData, creditData.cast || []);
-    } catch (error) {
-        console.error('Error fetching movie details:', error);
-        document.getElementById('detail-card').innerHTML = '<p>Gagal memuat detail film. Coba periksa koneksi atau ID film.</p>';
-    }
+    try {
+        const detailResponse = await fetch(`${TMDB_BASE_URL}/movie/${movieId}?language=id-ID`, options);
+        const detailData = await detailResponse.json();
+        const creditResponse = await fetch(`${TMDB_BASE_URL}/movie/${movieId}/credits?language=id-ID`, options);
+        const creditData = await creditResponse.json();
+
+        renderMovieDetail(detailData, creditData.cast || []);
+    } catch (error) {
+        console.error('Error fetching movie details:', error);
+        document.getElementById('detail-card').innerHTML = '<p>Gagal memuat detail film. Coba periksa koneksi atau ID film.</p>';
+    }
 }
 
 

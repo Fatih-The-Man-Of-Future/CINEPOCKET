@@ -63,6 +63,70 @@ body {
     width: 27px;
 }
 
+/* search section */
+
+.search-container {
+    display: none;
+    flex-direction: column;
+    margin: 60px 40px;
+    justify-content: center;
+    position: relative;
+}
+
+.cons-search h1 { 
+    margin: 52px 0px;
+    text-align: start;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 63px;
+}
+
+.search-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+}
+
+.search-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.search-list .search-card {
+    background-color: #56565625;
+    color: #CCCCCC;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 316px;
+    height: 520px;
+    cursor: pointer;
+    flex: 0 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-list .search-card .poster-image {
+    width: 263px;
+    height: 395px;
+    border-radius: 25px;
+    margin: 24px 26px;
+    padding: 0;
+}
+
+.search-list .search-card .card-content {
+    padding: 0;
+}
+
+.search-list .search-card .card-content .card-title {
+    font-size: 24px;
+    font-family: 'poppins';
+    width: 258px;
+    height: 36px;
+    margin: 0 29px;
+    margin-bottom: 42px;
+}
+
 /* Popular Section */
 .container.swiper {
     display: flex;
@@ -224,7 +288,7 @@ body {
 
 .scroll-btn {
     position: absolute;
-    top: 50%;
+    top: 58%;
     background-color: rgba(26, 61, 100, 0.7);
     color: #CCCCCC;
     border: none;
@@ -241,7 +305,7 @@ body {
 }
 
 .scroll-btn .material-symbols-outlined {
-    font-size: 30px; 
+    font-size: 70px; 
     user-select: none;
 }
 
@@ -252,8 +316,9 @@ body {
     justify-content: center;
 }
 
-.scroll-btn .material-symbols-outlined {
-    font-size: 30px; 
+.scroll-btn {
+    width: 70px;
+    height: 70px; 
 }
 
 .scroll-left {
@@ -262,4 +327,18 @@ body {
 
 .scroll-right {
     right: 20px; 
+}
+
+footer {
+    background-color: #0d0f14;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h1 {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 50px ;
 }

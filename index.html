@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINEPOXKET</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CINEPOXKET</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <header class="navbar">
-            <img src="/ASSET/PHOTO/ceinepocket-removebg.png" alt="Logo">
-        <div class="search">
-            <input type="search" id="search-input" placeholder="Cari Film..." class="search-input">
-            <button type="submit" class="search-button" aria-label="Cari" >
-                <img src="/ASSET/PHOTO/search-interface-symbol.png" alt="searchBtn" class="search-img">
-            </button>
-        </div>
-    </header>
+    <header class="navbar">
+            <img src="/ASSET/PHOTO/ceinepocket-removebg.png" alt="Logo">
+        <div class="search">
+            <input type="search" id="search-input" placeholder="Cari Film..." class="search-input">
+            <button type="submit" class="search-button" aria-label="Cari" onclick="searchMovie()">
+                <img src="/ASSET/PHOTO/search-interface-symbol.png" alt="searchBtn" class="search-img">
+            </button>
+        </div>
+    </header>
+
+    <div class="search-container"> 
+        <div class="cons-search"> 
+            <h1>Hasil pencarian</h1>
+        </div>
+        <div class="search-list">
+            <div id="loading-search">Loading data...</div> 
+            <div class="result-search"></div>
+        </div>
+    </div>
+    
 
     <div class="container swiper">
-        <div class="cons-swip">
-            <h1>POPULER</h1>
-        </div>
-        <div class="wrapper">
-            <div class="card-list swiper-wrapper">
-            </div>
-        </div>
+        <div class="cons-swip">
+        <h1>POPULER</h1>
+    </div>
+    <div class="wrapper">
+    <div class="card-list swiper-wrapper">
+        <div id="loading-populer">Loading data...</div>
+        <div class="result-populer"></div>
+    </div>
+    </div>
 
-            <div class="swiper-pagination"></div>
-    </div>
+        <div class="swiper-pagination"></div>
+    </div>
 
-<div class="trending-container"> 
+    <div class="trending-container"> 
         <div class="cons-trending"> 
             <h1>TRENDING</h1>
         </div>
-        <div class="trending-list"> 
+        <div class="trending-list">
+            <div id="loading-trending">Loading data...</div> 
+            <div class="result-trending"></div>
         </div>
     </div>
+    <hr>
+    <footer>
+        <h1>&Copy 2025 || Fatih</h1>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

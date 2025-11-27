@@ -20,7 +20,7 @@ body {
     align-items: center;
     width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-    height: 192px;
+    height: 100%;
 }
 
 .navbar img {
@@ -139,7 +139,7 @@ body {
 .buy-ticket-btn {
     align-self: flex-start;
     padding: 15px 35px;
-    background-color: #4A90E2; /* Warna yang cerah */
+    background-color: #4A90E2;
     color: #ffff;
     font-size: 18px;
     font-weight: 600;
@@ -156,7 +156,7 @@ body {
     background-color: #3266a0;
 }
 
-/* Tombol Kembali (Chevron Kiri) */
+
 .back-btn {
     position: absolute;
     top: -20px; 
@@ -173,6 +173,20 @@ body {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.back-btn .material-symbols-outlined {
+.back-btn .arrow-back {
     font-size: 30px;
+}
+
+footer {
+    background-color: #0d0f14;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer h1 {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 50px ;
 }
