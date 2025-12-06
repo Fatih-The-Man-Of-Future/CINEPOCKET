@@ -212,37 +212,38 @@ function addScrollBtn() {
     const searchList = document.querySelector('.search-list'); 
 
     //scroll trending
-    if (!trendingContainer || !trendingList) return;
-    //kiri
-    const leftBtn = document.createElement('button');
-    leftBtn.innerHTML = '<span class="material-symbols-outlined">chevron_left</span>';
-    leftBtn.className = 'scroll-btn trending-scroll-btn scroll-left'; 
-    leftBtn.onclick = () => trendingList.scrollBy({ left: -300, behavior: 'smooth' });
-    //kanan
-    const rightBtn = document.createElement('button');
-    rightBtn.innerHTML = '<span class="material-symbols-outlined">chevron_right</span>';
-    rightBtn.className = 'scroll-btn trending-scroll-btn scroll-right'; 
-    rightBtn.onclick = () => trendingList.scrollBy({ left: 300, behavior: 'smooth' });
+    if (!trendingContainer || !trendingList) {
+        //kiri
+        const leftBtn = document.createElement('button');
+        leftBtn.innerHTML = '<span class="material-symbols-outlined">chevron_left</span>';
+        leftBtn.className = 'scroll-btn trending-scroll-btn scroll-left'; 
+        leftBtn.onclick = () => trendingList.scrollBy({ left: -300, behavior: 'smooth' });
+        //kanan
+        const rightBtn = document.createElement('button');
+        rightBtn.innerHTML = '<span class="material-symbols-outlined">chevron_right</span>';
+        rightBtn.className = 'scroll-btn trending-scroll-btn scroll-right'; 
+        rightBtn.onclick = () => trendingList.scrollBy({ left: 300, behavior: 'smooth' });
 
-    trendingContainer.appendChild(leftBtn);
-    trendingContainer.appendChild(rightBtn);
+        trendingContainer.appendChild(leftBtn);
+        trendingContainer.appendChild(rightBtn);
+    }
 
-    // scroll search
+     // scroll search
     if (searchContainer && searchList) {
         const searchLeftBtn = document.createElement('button');
         searchLeftBtn.innerHTML = '<span class="material-symbols-outlined">chevron_left</span>';
         searchLeftBtn.className = 'scroll-btn search-scroll-btn scroll-left'; 
         searchLeftBtn.onclick = () => searchList.scrollBy({ left: -300, behavior: 'smooth' });
-
+    
         const searchRightBtn = document.createElement('button');
         searchRightBtn.innerHTML = '<span class="material-symbols-outlined">chevron_right</span>';
         searchRightBtn.className = 'scroll-btn search-scroll-btn scroll-right'; 
         searchRightBtn.onclick = () => searchList.scrollBy({ left: 300, behavior: 'smooth' });
-
+    
         searchContainer.appendChild(searchLeftBtn);
         searchContainer.appendChild(searchRightBtn);
     }
-}
+}   
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchPopularMovies();
