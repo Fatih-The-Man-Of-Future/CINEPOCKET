@@ -16,7 +16,9 @@ function getMovieIdFromUrl() {
 // DOM DETAIL
 function renderMovieDetail(movie, cast) {
     const detailCard = document.getElementById('detail-card');
-    const releaseDate = movie.release_date ? new Date(movie.release_date).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }) : '-';
+    const releaseDate = movie.release_date 
+        ? new Date(movie.release_date).toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' }) 
+        : '-';
     const castNames = cast.slice(0, 3).map(member => member.name).join(', ') || '-';
     const genres = movie.genres.slice(0, 3).map(g => g.name).join(', ') || '-';
     
@@ -50,15 +52,17 @@ async function fetchAndRenderDetails() {
     }
 
     try {
+        //detail
         const detailResponse = await fetch(`${TMDB_BASE_URL}/movie/${movieId}?language=id-ID`, options);
         const detailData = await detailResponse.json();
+        //pemeran
         const creditResponse = await fetch(`${TMDB_BASE_URL}/movie/${movieId}/credits?language=id-ID`, options);
         const creditData = await creditResponse.json();
 
         renderMovieDetail(detailData, creditData.cast || []);
     } catch (error) {
         console.error('Error fetching movie details:', error);
-        document.getElementById('detail-card').innerHTML = '<p>Gagal memuat detail film. Coba periksa koneksi atau ID film.</p>';
+        document.getElementById('detail-card').innerHTML = '<p>Gagal memuat detail film. periksa koneksi Anda</p>';
     }
 }
 
